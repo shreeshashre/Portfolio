@@ -89,7 +89,14 @@
         </section>
     </main>
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9653PJ3RXV"></script>
     <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9653PJ3RXV');
+
         const element = document.querySelector("main");
         element.addEventListener('wheel', (event) => {
             event.preventDefault();
