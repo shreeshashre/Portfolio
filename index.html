@@ -1,16 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shreesha Shrestha</title>
 
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <style>
+        html,
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        main {
+            overflow-x: hidden;
+            display: flex;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            min-width: 50vw;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4ch;
+        }
+
+        section:nth-child(odd) {
+            background-color: #abbde4;
+            color: #f2f7fe;
+        }
+
+        section:nth-child(even) {
+            background-color: #f2f7fe;
+            color: #abbde4;
+        }
+    </style>
 </head>
+
 <body>
-    <h1 class="text-4xl text-indigo-500 font-bold py-10 text-center">
-        Shreesha Shrestha 
-    </h1>
+    <main>
+        <section>
+            <img id="my-svg" src="public/image/face-01.svg" alt="SVG Image" height="600" width="600" />
+        </section>
+        <section>
+            <h1>Shreesha Shrestha</h1>
+        </section>
+        <!-- <section>
+            <h1>Shreesha Shrestha</h1>
+        </section>
+        <section>
+            <h1>Shreesha Shrestha</h1>
+        </section> -->
+    </main>
+
+    <script>
+        const element = document.querySelector("main");
+        element.addEventListener('wheel', (event) => {
+            event.preventDefault();
+
+            element.scrollBy({
+                left: event.deltaY < 0 ? -100 : 100,
+            });
+        });
+    </script>
 </body>
+
 </html>
