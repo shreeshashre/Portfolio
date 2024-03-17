@@ -13,23 +13,20 @@
             font-family: sans-serif;
         }
 
-        main {
+        #desktop {
             overflow-x: hidden;
             display: flex;
         }
 
-        h1 {
-            margin: 0;
-            padding: 0;
-        }
-
-        section {
+        #desktop section {
             min-width: 50vw;
             min-height: 100vh;
             display: flex;
             justify-content: center;
+            flex-direction: column;
             align-items: center;
             font-size: 4ch;
+
         }
 
         section:nth-child(odd) {
@@ -41,23 +38,55 @@
             background-color: #f2f7fe;
             color: #abbde4;
         }
+
+        @media only screen and (max-width: 500px) {
+            #desktop {
+                display: none;
+            }
+
+            #mobile {
+                display: flex;
+            }
+
+            #mobile section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <main>
+    <main id="desktop">
         <section>
-            <img id="my-svg" src="public/image/face-01.svg" alt="SVG Image" height="600" width="600" />
+            <img src="public/image/face-01.svg" alt="SVG Image" height="600" width="600" />
         </section>
         <section>
             <h1>Shreesha Shrestha</h1>
+            <a target="_blank" href="public/ShreeshaShresthaCV.pdf"
+                style="text-decoration: none; color: #abbde4;">Download
+                CV</a>
         </section>
-        <!-- <section>
-            <h1>Shreesha Shrestha</h1>
-        </section>
+    </main>
+
+    <main id="mobile">
         <section>
-            <h1>Shreesha Shrestha</h1>
-        </section> -->
+            <div>
+                <img src="public/image/face-01.svg" alt="SVG Image" height="200" width="200" />
+            </div>
+            <div>
+                <h1 style="color: #f2f7fe;">Shreesha Shrestha</h1>
+                <div style="text-align: center; ">
+                    <a target="_blank" href="public/ShreeshaShresthaCV.pdf"
+                        style="text-decoration: none;color: #f2f7fe;">Download
+                        CV</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script>
